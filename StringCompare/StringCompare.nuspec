@@ -2,10 +2,10 @@
 <package >
   <metadata>
     <id>StringCompareMeasure</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <version>1.1</version>
+    <title>String comparison in measures</title>
+    <authors>Nick Rimmer</authors>
+    <owners>Nick Rimmer</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <projectUrl>https://github.com/NickRimmer/StringCompare</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -13,8 +13,15 @@
 
 In this version allow:
 - Levenshtein distance
-- Tanimoto coefficient</description>
+- Tanimoto coefficient
+- Hamming distance</description>
+    <summary>Simple strings Compares (measuring the difference between two sequences)
+
+In this version allow:
+- Levenshtein distance
+- Tanimoto coefficient
+- Hamming distance</summary>
     <copyright>Copyright (C) 2015 Nick Rimmer. Contacts: &lt;xan@dipteam.com&gt;</copyright>
-    <tags>strings, levenshtein, tanimoto</tags>
+    <tags>strings, levenshtein, tanimoto, Hamming</tags>
   </metadata>
 </package>
