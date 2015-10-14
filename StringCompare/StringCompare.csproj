@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Hamming\HammingAlgorithm.cs" />
+    <Compile Include="Algorithms\Hamming\HammingAlgorithmExtension.cs" />
     <Compile Include="Algorithms\Levenshtein\LevenshteinAlgorithm.cs" />
     <Compile Include="Algorithms\Levenshtein\LevenshteinAlgorithmExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

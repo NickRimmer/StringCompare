@@ -3,20 +3,19 @@
 // 
 // This file is part of StringCompare library.
 // Licensed under the MIT License (MIT)
-
-namespace StringCompare.Algorithms.Tanimoto
+namespace StringCompare.Algorithms.Hamming
 {
-    public static class TanimotoAlgorithmExtension
+    public static class HammingAlgorithmExtension
     {
         /// <summary>
         /// Measure the difference
         /// </summary>
         /// <param name="source">source string</param>
         /// <param name="target">target string</param>
-        /// <returns>0 is different, 1 is equals, >1 if target string has more matches</returns>
-        public static double CompareTanimoto(this string source, string target)
+        /// <returns>0 is different, 1 is equals</returns>
+        public static double CompareHamming(this string source, string target)
         {
-            return new TanimotoAlgorithm().GetCompareResult(source, target);
+            return new HammingAlgorithm().GetCompareResult(source, target);
         }
     }
 }

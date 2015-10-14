@@ -9,8 +9,17 @@ using StringCompare.Structures.Interfaces;
 
 namespace StringCompare.Algorithms.Levenshtein
 {
+    /// <summary>
+    /// About https://en.wikipedia.org/wiki/Edit_distance
+    /// </summary>
     public class LevenshteinAlgorithm:ICompareAlgorithm
     {
+        /// <summary>
+        /// Measure the difference
+        /// </summary>
+        /// <param name="source">source string</param>
+        /// <param name="target">target string</param>
+        /// <returns>0 is different, 1 is equals</returns>
         public double GetCompareResult(string source, string target)
         {
             

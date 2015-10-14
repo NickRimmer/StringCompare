@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StringCompare.Algorithms.Hamming;
 using StringCompare.Algorithms.Levenshtein;
 using StringCompare.Algorithms.Tanimoto;
 using StringCompare.Structures.Interfaces;
@@ -19,49 +20,48 @@ namespace StringCompareTests
     public class MainTests
     {
         /// <summary>
-        /// Наборы данных для тестов
+        /// Test sets
         /// </summary>
         private List<DataModel> _datas = new List<DataModel>
         {
-            new DataModel("Проверка опечатков", "Этот белый шарик")
-            .AddTarget("Это белий шарек") // 3 опечатки
-            .AddTarget("Этот белий шарек") // 2 опечатки
-            .AddTarget("Этот белий шарик") // 1 опечатка
-            .AddTarget("Этот белый шарик") // такой же
-            .AddTarget("левый текст") // левый текст
+            new DataModel("Incorrects", "White House")
+            .AddTarget("whate mouze")
+            .AddTarget("white mouze")
+            .AddTarget("white mouse")
+            .AddTarget("white house")
+            .AddTarget("some text")
             ,
-            new DataModel("Проверка лишних слов", "крутой спуск")
-            .AddTarget("слишком крутой спуск")
-            .AddTarget("не слишком крутой спуск")
-            .AddTarget("крутой спуск спереди")
-            .AddTarget("левый текст")
-            .AddTarget("крутой спуск")
+            new DataModel("Differents words", "Blue sea")
+            .AddTarget("deep blue sea")
+            .AddTarget("very deep blue sea")
+            .AddTarget("sea is blue")
+            .AddTarget("blue sea")
             ,
-            new DataModel("Проверка с повтором", "солнцестояние")
-            .AddTarget("солнцестояние солнцестояние")
-            .AddTarget("солнцестояние солнцестояние солнцестояние")
-            .AddTarget("левый текст")
-            .AddTarget("солнцестояние")
+            new DataModel("Test with repeats", "again")
+            .AddTarget("again again")
+            .AddTarget("again and again")
+            .AddTarget("again")
 
             ,
-            new DataModel("Проверка с обратным повтором", "солнцестояние солнцестояние")
-            .AddTarget("солнцестояние солнцестояние")
-            .AddTarget("солнцестояние солнцестояние солнцестояние")
-            .AddTarget("левый текст")
-            .AddTarget("солнцестояние")
+            new DataModel("Test with repeats in source", "fast fast")
+            .AddTarget("fast")
+            .AddTarget("fast fast fast")
+            .AddTarget("fast fast fast fasr")
+            .AddTarget("fast fast")
 
             ,
-            new DataModel("Проверка в разных местах", "слово")
-            .AddTarget("первым было слово")
-            .AddTarget("первым слово было")
-            .AddTarget("слово первым было")
-            .AddTarget("слово")
+            new DataModel("Position test", "word")
+            .AddTarget("it is word")
+            .AddTarget("is it word")
+            .AddTarget("wor is it")
+            .AddTarget("word")
         };
 
         private List<ICompareAlgorithm> _algorithms = new List<ICompareAlgorithm>
         {
             new TanimotoAlgorithm(),
-            new LevenshteinAlgorithm()
+            new LevenshteinAlgorithm(),
+            new HammingAlgorithm()
         };
 
         [TestMethod]
@@ -69,10 +69,10 @@ namespace StringCompareTests
         {
             foreach (var algorithm in _algorithms)
             {
-                Console.WriteLine("\n\nАлгоритм - {0}", algorithm.GetType().Name);
+                Console.WriteLine("\n\nAlgorithm - {0}", algorithm.GetType().Name);
                 foreach (var data in _datas)
                 {
-                    Console.WriteLine("\nТест \"{0}\" ({1}):", data.DataName, data.Source);
+                    Console.WriteLine("\nTest \"{0}\" ({1}):", data.DataName, data.Source);
 
                     var results = data
                         .Targets
