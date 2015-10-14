@@ -1,5 +1,5 @@
 # About
-Simple string comparison, with coefficients
+Simple strings Compares (measuring the difference between two sequences)
 
 # Compare algorithms
 * Levenshtein distance
