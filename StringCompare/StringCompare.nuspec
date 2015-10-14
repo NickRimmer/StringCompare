@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>StringCompareMeasure</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/NickRimmer/StringCompare</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple strings Compares (measuring the difference between two sequences)
+
+In this version allow:
+- Levenshtein distance
+- Tanimoto coefficient</description>
+    <copyright>Copyright (C) 2015 Nick Rimmer. Contacts: &lt;xan@dipteam.com&gt;</copyright>
+    <tags>strings, levenshtein, tanimoto</tags>
+  </metadata>
+</package>

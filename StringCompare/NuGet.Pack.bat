@@ -1,0 +1,1 @@
+nuget pack StringCompare.csproj -Prop Configuration=Release
