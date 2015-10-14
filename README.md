@@ -6,6 +6,7 @@ Simple strings Compares (measuring the difference between two sequences)
 
 * Levenshtein distance
 * Tanimoto coefficient
+* Hamming distance
 
 ## Installation
 
@@ -21,6 +22,8 @@ Install-Package StringCompareMeasure
     var howMuch = "hello"
           .CompareLevenshtein("Hello world");
     //or  .CompareTanimoto("Hello world");
+    //or use this principle
+    //    .CompareSomeAlgorithmName ("your_target_string");
 
 ## Contributing
 
