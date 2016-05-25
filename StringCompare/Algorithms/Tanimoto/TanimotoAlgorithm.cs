@@ -5,6 +5,8 @@
 // Licensed under the MIT License (MIT)
 
 using StringCompare.Structures.Interfaces;
+using System;
+using System.Linq;
 
 namespace StringCompare.Algorithms.Tanimoto
 {
@@ -26,7 +28,7 @@ namespace StringCompare.Algorithms.Tanimoto
             source = source ?? string.Empty;
             target = target ?? string.Empty;
 
-            if (string.IsNullOrWhiteSpace(source) && string.IsNullOrWhiteSpace(target)) return 1;
+            if (IsNullOrWhiteSpace(source) && IsNullOrWhiteSpace(target)) return 1;
 
             double sourceLength = source.Length;
             double targetLength = target.Length;
@@ -38,6 +40,17 @@ namespace StringCompare.Algorithms.Tanimoto
             }
 
             return commonsCount / (sourceLength + targetLength - commonsCount);
+        }
+
+        /// <summary>
+        /// Provided here for backward compatibility with older .NET versions.
+        /// See: http://referencesource.microsoft.com/#mscorlib/system/string.cs,55e241b6143365ef
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private static bool IsNullOrWhiteSpace(string value)
+        {
+            return value == null || value.All(Char.IsWhiteSpace);
         }
     }
 }
