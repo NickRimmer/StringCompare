@@ -23,5 +23,14 @@ In this version allow:
 - Hamming distance</summary>
     <copyright>Copyright (C) 2015 Nick Rimmer. Contacts: &lt;xan@dipteam.com&gt;</copyright>
     <tags>strings, levenshtein, tanimoto, Hamming</tags>
+    <dependencies>
+      <group targetFramework="net20">
+        <dependency id="LinqBridge"  version="1.3.0" />
+      </group>
+      <group targetFramework="net35" />
+    </dependencies>
   </metadata>
+  <files>
+    <file src="bin\Release\StringCompare.dll" target="lib\net20" />
+  </files>
 </package>
