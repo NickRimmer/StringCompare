@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>StringCompareMeasure</id>
-    <version>1.1</version>
+    <version>1.1.2</version>
     <title>String comparison in measures</title>
     <authors>Nick Rimmer</authors>
     <owners>Nick Rimmer</owners>
@@ -32,5 +32,6 @@ In this version allow:
   </metadata>
   <files>
     <file src="bin\Release\StringCompare.dll" target="lib\net20" />
+    <file src="bin\Release\StringCompare.xml" target="lib\net20" />
   </files>
 </package>
