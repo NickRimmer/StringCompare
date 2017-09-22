@@ -55,6 +55,8 @@ namespace StringCompareTests
             .AddTarget("is it word")
             .AddTarget("wor is it")
             .AddTarget("word")
+            .AddTarget("wor")
+            .AddTarget(" w ")
         };
 
         private List<ICompareAlgorithm> _algorithms = new List<ICompareAlgorithm>

@@ -29,13 +29,13 @@ namespace StringCompare.Algorithms.Levenshtein
             if (string.IsNullOrEmpty(target))
                 return string.IsNullOrEmpty(source) ? 0 : source.Length;
 
+            source = source.ToLowerInvariant().Trim();
+            target = target.ToLowerInvariant().Trim();
+
             var sourceLength = source.Length;
             var targetLength = target.Length;
 
             var distance = new int[sourceLength + 1, targetLength + 1];
-
-            source = source.ToLowerInvariant().Trim();
-            target = target.ToLowerInvariant().Trim();
 
             for (var i = 0; i <= sourceLength; distance[i, 0] = i++) ;
             for (var j = 0; j <= targetLength; distance[0, j] = j++) ;
