@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>StringCompareMeasure</id>
+    <id>StringCompareMeasure.net45</id>
     <version>1.1.2</version>
     <title>String comparison in measures</title>
     <authors>Nick Rimmer</authors>
@@ -21,17 +21,11 @@ In this version allow:
 - Levenshtein distance
 - Tanimoto coefficient
 - Hamming distance</summary>
-    <copyright>Copyright (C) 2015 Nick Rimmer. Contacts: &lt;xan@dipteam.com&gt;</copyright>
+    <copyright>Copyright (C) 2017 Nick Rimmer. Contacts: &lt;xan@dipteam.com&gt;</copyright>
     <tags>strings, levenshtein, tanimoto, Hamming</tags>
-    <dependencies>
-      <group targetFramework="net20">
-        <dependency id="LinqBridge"  version="1.3.0" />
-      </group>
-      <group targetFramework="net35" />
-    </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\StringCompare.dll" target="lib\net20" />
-    <file src="bin\Release\StringCompare.xml" target="lib\net20" />
+    <file src="bin\Release\StringCompare.dll" target="lib\net45" />
+    <file src="bin\Release\StringCompare.xml" target="lib\net45" />
   </files>
 </package>
