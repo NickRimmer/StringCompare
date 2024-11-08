@@ -5,15 +5,12 @@
 // Licensed under the MIT License (MIT)
 namespace StringCompareTests.Models
 {
-    public class ResultModel
+    public record ResultModel
     {
-        public double CompareValue { get; set; }
+        public double CompareValue { get; init; }
 
-        public string Target { get; set; }
+        public string Target { get; init; }
 
-        public override string ToString()
-        {
-            return string.Format("{0} - \"{1}\"",  CompareValue, Target);
-        }
+        public override string ToString() => $"{CompareValue} - \"{Target}\"";
     }
 }

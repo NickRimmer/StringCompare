@@ -12,7 +12,7 @@ namespace StringCompare.Algorithms.Levenshtein
     /// <summary>
     /// About https://en.wikipedia.org/wiki/Edit_distance
     /// </summary>
-    public class LevenshteinAlgorithm:ICompareAlgorithm
+    public class LevenshteinAlgorithm : ICompareAlgorithm
     {
         /// <summary>
         /// Measure the difference
@@ -22,7 +22,7 @@ namespace StringCompare.Algorithms.Levenshtein
         /// <returns>0 is different, 1 is equals</returns>
         public double GetCompareResult(string source, string target)
         {
-            
+
             if (string.IsNullOrEmpty(source))
                 return string.IsNullOrEmpty(target) ? 0 : target.Length;
 
@@ -37,8 +37,13 @@ namespace StringCompare.Algorithms.Levenshtein
 
             var distance = new int[sourceLength + 1, targetLength + 1];
 
-            for (var i = 0; i <= sourceLength; distance[i, 0] = i++) ;
-            for (var j = 0; j <= targetLength; distance[0, j] = j++) ;
+            for (var i = 0; i <= sourceLength; distance[i, 0] = i++)
+            {
+            }
+
+            for (var j = 0; j <= targetLength; distance[0, j] = j++)
+            {
+            }
 
             for (var i = 1; i <= sourceLength; i++)
             {
@@ -52,7 +57,7 @@ namespace StringCompare.Algorithms.Levenshtein
             //return distance[sourceLength, targetLength];
 
             double stepsToSame = distance[sourceLength, targetLength];
-            return (1.0 - (stepsToSame / (double)Math.Max(source.Length, target.Length)));
+            return (1.0 - (stepsToSame / Math.Max(source.Length, target.Length)));
 
         }
     }
