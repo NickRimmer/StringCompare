@@ -4,7 +4,6 @@
 // This file is part of StringCompare library.
 // Licensed under the MIT License (MIT)
 
-using System;
 using System.Linq;
 using StringCompare.Structures.Interfaces;
 

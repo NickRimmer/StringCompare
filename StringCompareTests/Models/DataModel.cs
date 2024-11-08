@@ -8,30 +8,24 @@ using System.Collections.Generic;
 
 namespace StringCompareTests.Models
 {
-    public class DataModel
+    public record DataModel
     {
-        public string Source { get; set; }
-        public List<string> Targets { get; set; }
+        public string Source { get; }
+        public IReadOnlyCollection<string> Targets => _targets;
 
-        public string DataName { get; set; }
+        private readonly List<string> _targets = new ();
+
+        public string DataName { get; }
 
         public DataModel(string dataName, string source)
         {
             DataName = dataName;
             Source = source;
-            Targets = new List<string>();
-        }
-
-
-        public DataModel SetSource(string source)
-        {
-            Source = source;
-            return this;
         }
 
         public DataModel AddTarget(string target)
         {
-            Targets.Add(target);
+            _targets.Add(target);
             return this;
         }
     }

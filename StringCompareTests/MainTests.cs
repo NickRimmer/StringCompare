@@ -22,49 +22,45 @@ namespace StringCompareTests
         /// <summary>
         /// Test sets
         /// </summary>
-        private List<DataModel> _datas = new List<DataModel>
-        {
+        private readonly List<DataModel> _data = [
             new DataModel("Incorrects", "White House")
-            .AddTarget("whate mouze")
-            .AddTarget("white mouze")
-            .AddTarget("white mouse")
-            .AddTarget("white house")
-            .AddTarget("some text")
-            ,
+                .AddTarget("whate mouze")
+                .AddTarget("white mouze")
+                .AddTarget("white mouse")
+                .AddTarget("white house")
+                .AddTarget("some text"),
+
             new DataModel("Differents words", "Blue sea")
-            .AddTarget("deep blue sea")
-            .AddTarget("very deep blue sea")
-            .AddTarget("sea is blue")
-            .AddTarget("blue sea")
-            ,
+                .AddTarget("deep blue sea")
+                .AddTarget("very deep blue sea")
+                .AddTarget("sea is blue")
+                .AddTarget("blue sea"),
+
             new DataModel("Test with repeats", "again")
-            .AddTarget("again again")
-            .AddTarget("again and again")
-            .AddTarget("again")
+                .AddTarget("again again")
+                .AddTarget("again and again")
+                .AddTarget("again"),
 
-            ,
             new DataModel("Test with repeats in source", "fast fast")
-            .AddTarget("fast")
-            .AddTarget("fast fast fast")
-            .AddTarget("fast fast fast fasr")
-            .AddTarget("fast fast")
+                .AddTarget("fast")
+                .AddTarget("fast fast fast")
+                .AddTarget("fast fast fast fasr")
+                .AddTarget("fast fast"),
 
-            ,
             new DataModel("Position test", "word")
-            .AddTarget("it is word")
-            .AddTarget("is it word")
-            .AddTarget("wor is it")
-            .AddTarget("word")
-            .AddTarget("wor")
-            .AddTarget(" w ")
-        };
+                .AddTarget("it is word")
+                .AddTarget("is it word")
+                .AddTarget("wor is it")
+                .AddTarget("word")
+                .AddTarget("wor")
+                .AddTarget(" w "),
+        ];
 
-        private List<ICompareAlgorithm> _algorithms = new List<ICompareAlgorithm>
-        {
+        private readonly List<ICompareAlgorithm> _algorithms = [
             new TanimotoAlgorithm(),
             new LevenshteinAlgorithm(),
-            new HammingAlgorithm()
-        };
+            new HammingAlgorithm(),
+        ];
 
         [TestMethod]
         public void Main_Test1()
@@ -72,7 +68,7 @@ namespace StringCompareTests
             foreach (var algorithm in _algorithms)
             {
                 Console.WriteLine("\n\nAlgorithm - {0}", algorithm.GetType().Name);
-                foreach (var data in _datas)
+                foreach (var data in _data)
                 {
                     Console.WriteLine("\nTest \"{0}\" ({1}):", data.DataName, data.Source);
 
